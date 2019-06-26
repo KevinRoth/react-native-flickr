@@ -16,29 +16,19 @@ const PhotoDetail = ({ title, imageUrl }) => {
   return (
     <Card>
       <CardSection>
-        <View style={thumbnailContainerStyle}>
-          <Image
-            style={thumbnailStyle}
-            source={{ uri: imageUrl }}
-          />
-        </View>
-        <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{title}</Text>
-          
-        </View>
-      </CardSection>
-
-      <CardSection>
+        <View style={{headerContentStyle}}>
         <Image
           style={imageStyle}
           source={{ uri: imageUrl }}
         />
-      </CardSection>
 
-      <CardSection>
-        <Button onPress={() => Linking.openURL(imageUrl)}>
-          See Now!
-        </Button>
+
+         <View style={{marginTop: 12, alignItems: 'center', justifyContent: 'center'}}>
+           <Button onPress={() => Linking.openURL(imageUrl)}>
+             Ver imágen {title}
+           </Button>
+         </View>
+       </View>
       </CardSection>
     </Card>
   );
@@ -47,7 +37,8 @@ const PhotoDetail = ({ title, imageUrl }) => {
 const styles = {
   headerContentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    marginTop: 12,
+    width: 400
   },
   headerTextStyle: {
     fontSize: 18
@@ -65,7 +56,7 @@ const styles = {
   imageStyle: {
     height: 300,
     flex: 1,
-    width: null
+    width: 350
   }
 };
 

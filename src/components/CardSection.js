@@ -11,14 +11,24 @@ const CardSection = (props) => {
 
 const styles = {
   containerStyle: {
-    borderBottomWidth: 1,
     padding: 5,
     backgroundColor: '#fff',
-    justifyContent: 'flex-start',
+    borderColor: '#a40bdd',
+    position: 'relative',
+    paddingTop: 24,
+    paddingRight: 12,
+    paddingBottom: 24,
+    paddingLeft: 12,
+    minHeight: 96,
+    borderRadius: 8,
+    display: 'flex',
     flexDirection: 'row',
-    borderColor: '#ddd',
-    position: 'relative'
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerCardStyle: {
+
+  },
 };
 
 export default CardSection;

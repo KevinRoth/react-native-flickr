@@ -14,17 +14,10 @@ const AlbumDetail = ({ title, albumId }) => {
   } = styles;
 
   return (
-    <Card style={headerCardStyle}>
+    <Card>
       <CardSection>
-        <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{title}</Text>
-          
-        </View>
-      </CardSection>
-
-      <CardSection>
-        <Button onPress={() => Actions.photoList({albumId:albumId})}>
-          See Now!
+       <Button onPress={() => Actions.photoList({albumId:albumId})}>
+         Entrá a {title}
         </Button>
       </CardSection>
     </Card>
@@ -37,11 +30,9 @@ const styles = {
     justifyContent: 'space-around',
 
   },
-  headerCardStyle: {
-    padding: 12
-  },
   headerTextStyle: {
-    fontSize: 18
+    fontSize: 18,
+    textAlign: 'center'
   },
   thumbnailStyle: {
     height: 50,

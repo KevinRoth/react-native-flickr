@@ -13,12 +13,12 @@ const App = () => (
         <Router>
             <Scene key="root">
                 <Scene key="albumList" component={AlbumList} title="Albums" initial={true} />
-                <Scene key="photoList" component={PhotoList} title="Photos" />
+
             </Scene>
         </Router>
     </View>
 
 );
-
+/*<Scene key="photoList" component={PhotoList} title="Photos" />*/
 // Render it to the device
 AppRegistry.registerComponent('albums', () => App);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
@@ -11,29 +11,31 @@ class AlbumList extends Component {
       .then(response => this.setState({ photoset: response.data.photosets.photoset }));
   }
 
-  renderAlbums() {
-    return this.state.photoset.map(album =>
-      <AlbumDetail key={album.id} title={album.title._content}  albumId={album.id}  />
-    );
+  renderAlbum(item) {
+    return (
+        <AlbumDetail key={item.id} title={item.title._content}  albumId={item.id}  />
+    )
   }
 
   render() {
-    console.log(this.state);
-
-
     if (!this.state.photoset) { 
 			return (
-					<Text>
-            Loading...
-					</Text>
+			    <View style={{flex: 1}}>
+                  <Text>
+                    Espere un momento...
+                  </Text>
+                </View>
 				);
     }
 
     return (
       <View style={{ flex: 1 }}>
-        <ScrollView>
-          {this.renderAlbums()}
-        </ScrollView>
+        <FlatList
+            key={"flatListAlbum"}
+            data={this.state.photoset}
+            renderItem={({item}) => this.renderAlbum(item)}
+            keyExtractor={(item, index) => index.toString()}
+        />
       </View>
     );
   }

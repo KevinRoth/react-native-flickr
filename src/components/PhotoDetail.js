@@ -1,15 +1,12 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
 const PhotoDetail = ({ title, imageUrl }) => {
   const {
-    thumbnailStyle,
     headerContentStyle,
-    thumbnailContainerStyle,
-    headerTextStyle,
     imageStyle
   } = styles;
 
